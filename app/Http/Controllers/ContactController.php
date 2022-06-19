@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,8 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $student = Student::all();
-        
+       $contacts = Contact::all();
+       return view('contacts.index')->with('contacts',$contacts); 
     }
 
     /**
@@ -25,7 +25,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contacts.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        Contact::create($input);
+
+        return redirect('contacts')->with('flash_message','Contact Added !');
     }
 
     /**
@@ -47,7 +51,9 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        $contact = Contact::find($id);
+
+        return view('contacts.show')->with('contact',$contact);
     }
 
     /**
@@ -58,7 +64,9 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact = Contact::find($id);
+
+        return view('contacts.edit')->with('contact',$contact);
     }
 
     /**
@@ -70,7 +78,11 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::find($id);
+        $input = $request->all();
+        $contact->update($input);
+
+        return redirect('contacts')->with('flash_message','Contact Updated successfully !');
     }
 
     /**
@@ -81,6 +93,8 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Contact::destroy($id);
+
+        return redirect('contacts')->with('flash_message','Contacts deleted!');
     }
 }
