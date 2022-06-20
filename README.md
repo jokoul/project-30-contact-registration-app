@@ -6,7 +6,7 @@ this is an application that allow to register contact information such as addres
 
 ## Stack
 
-Laravel, Bootstrap
+Laravel, MySQL, Bootstrap
 
 ## Launch
 
