@@ -2,7 +2,7 @@
 
 ## Description
 
-this application allow to register contact information such as address, phone number, etc. I used PHP framework called Laravel to achieve this app by implementing CRUD operation. Laravel is based on MVC pattern, so I design specific routes wich call a resource controller and the controller handle database from one side and return corresponding views with blade extension from other side.
+this is an application that allow to register contact information such as address, phone number, etc. I used PHP framework called Laravel to achieve this app by implementing CRUD operation. Laravel is based on MVC pattern, so I design specific routes wich call a resource controller and the controller handle database through models from one side and return corresponding views with blade extension from other side.
 
 ## Stack
 
