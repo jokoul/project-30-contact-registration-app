@@ -1,4 +1,4 @@
-# project-40-contact-register-app
+# project-40-contact-registration-app
 
 ## Description
 
